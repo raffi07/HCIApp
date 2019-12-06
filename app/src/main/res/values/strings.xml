@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">TeachIn</string>
+    <string name="informationButton">Information letter</string>
+    <string name="responseButton">Response letter</string>
+    <string name="pickQR">Load a letter series to implement QR Code on it</string>
+    <string name="loadDocument">Load Letter Series</string>
+    <string name="title_activity_load_screen">LoadScreen</string>
+    <string name="title_activity_class_screen">ClassScreen</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
