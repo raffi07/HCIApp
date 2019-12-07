@@ -10,8 +10,20 @@
     <string name="viewDocument">View Letter Series</string>
     <string name="confirmLettersButton">Done</string>
     <string name="redoButton">Redo</string>
+    <string name="listFirstEntry">Class Travel</string>
+    <string name="listFirstEntryCount">3 of 4 read | 1 of 4 sent</string>
+    <string name="listSecondEntry">Parents Talk</string>
+    <string name="listSecondEntryCount">2 of 6 returned | 3 of 6 read | 1 of 6 sent</string>
+
     <string name="title_activity_load_screen">LoadScreen</string>
     <string name="title_activity_class_screen">ClassScreen</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="ListItemDescription">ListItem</string>
+
+    <string-array name="alreadyCreatedLetter">
+        <item>Class travel</item>
+        <item>Christmas singing</item>
+        <item>Parents talk</item>
+    </string-array>
 </resources>
