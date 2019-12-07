@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button informationButton;
     private Button responseButton;
+    private Button seeLettersButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.informationButton = findViewById(R.id.informationButton);
         this.responseButton = findViewById(R.id.responseButton);
+        this.seeLettersButton = findViewById(R.id.alreadyCreatedButton);
 
         informationButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 openLoadScreen("response");
             }
         });
+        seeLettersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), LetterList.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void openLoadScreen(String type){

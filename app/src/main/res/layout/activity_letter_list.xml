@@ -7,10 +7,21 @@
         android:layout_height="match_parent"
         tools:context=".LetterList">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:title="Letters"
+        app:titleTextColor="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#FF9E80"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/letterList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
             tools:layout_editor_absoluteY="106dp"
             tools:layout_editor_absoluteX="143dp"/>
 </RelativeLayout>

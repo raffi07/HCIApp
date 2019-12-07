@@ -4,7 +4,7 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   android:background="#F0FFE8E8"
+                                                   android:background="#FFFFFF"
                                                    tools:context=".MainActivity">
 
     <ImageView
@@ -12,39 +12,21 @@
             android:layout_width="208dp"
             android:layout_height="192dp"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="104dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginTop="108dp"
+            android:layout_marginEnd="105dp"
             android:adjustViewBounds="false"
-            android:background="#3D5AFE"
             android:scaleType="centerInside"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.333"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:contentDescription="@string/logo_description"/>
-
-    <TextView
-            android:id="@+id/textView"
-            android:layout_width="105dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="50dp"
-            android:text="@string/app_name"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView"/>
-
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/logo_description" app:srcCompat="@drawable/ic_teachin"/>
     <Button
             android:id="@+id/informationButton"
             android:layout_width="205dp"
             android:layout_height="35dp"
             android:layout_marginStart="161dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="161dp"
             android:background="@drawable/rounded_button"
             android:text="@string/informationButton"

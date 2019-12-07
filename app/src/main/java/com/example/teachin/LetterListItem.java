@@ -1,11 +1,11 @@
 package com.example.teachin;
 
-public class letterListItem {
+public class LetterListItem {
     private int mImageResource;
     private String title;
     private String subtitle;
 
-    public letterListItem(int mImageResource, String title, String subtitle){
+    public LetterListItem(int mImageResource, String title, String subtitle){
         this.mImageResource = mImageResource;
         this.title = title;
         this.subtitle = subtitle;
