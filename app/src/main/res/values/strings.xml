@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">TeachIn</string>
     <string name="logo_description">App Logo</string>
-    <string name="informationButton"> New Information letter</string>
+    <string name="informationButton">New Information letter</string>
     <string name="responseButton">New Response letter</string>
     <string name="alreadyCreatedButton">Created letters</string>
     <string name="pickQR">Load a letter series to implement QR Code on it</string>
+    <string name="loadedQR">QR-code has been successfully put onto your letters</string>
     <string name="loadDocument">Load Letter Series</string>
+    <string name="viewDocument">View Letter Series</string>
     <string name="title_activity_load_screen">LoadScreen</string>
     <string name="title_activity_class_screen">ClassScreen</string>
     <string name="tab_text_1">Tab 1</string>

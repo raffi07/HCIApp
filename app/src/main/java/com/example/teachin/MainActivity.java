@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void openLoadScreen(String type){
         Intent intent = new Intent(this, LoadQR.class);
-        intent.putExtra(type, LoadQR.class);
+        intent.putExtra("letterType", type);
         startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
     }
 }

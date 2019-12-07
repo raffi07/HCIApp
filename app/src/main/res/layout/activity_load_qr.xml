@@ -33,20 +33,20 @@
         app:srcCompat="@drawable/ic_iconmonstr_qr_code" />
 
     <TextView
-        android:id="@+id/loadQRHeader"
-        android:layout_width="304dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="150dp"
-        android:text="@string/pickQR"
-        android:textAlignment="center"
-        android:textColor="#969292"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/loadQRHeader"
+            android:layout_width="304dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/pickQR"
+            android:textAlignment="center"
+            android:textColor="#969292"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
-        android:id="@+id/loadDocumentButton"
+        android:id="@+id/viewDocumentButton"
         android:layout_width="180dp"
         android:layout_height="35dp"
         android:background="@drawable/rounded_button"
