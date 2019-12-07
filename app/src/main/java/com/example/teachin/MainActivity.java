@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.informationButton = findViewById(R.id.button);
-        this.responseButton = findViewById(R.id.button2);
+        this.informationButton = findViewById(R.id.informationButton);
+        this.responseButton = findViewById(R.id.responseButton);
 
         informationButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoadQR.class);
         intent.putExtra(type, LoadQR.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
     }
 }
