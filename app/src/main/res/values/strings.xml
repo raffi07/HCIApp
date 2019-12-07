@@ -8,6 +8,8 @@
     <string name="loadedQR">QR-code has been successfully put onto your letters</string>
     <string name="loadDocument">Load Letter Series</string>
     <string name="viewDocument">View Letter Series</string>
+    <string name="confirmLettersButton">Done</string>
+    <string name="redoButton">Redo</string>
     <string name="title_activity_load_screen">LoadScreen</string>
     <string name="title_activity_class_screen">ClassScreen</string>
     <string name="tab_text_1">Tab 1</string>

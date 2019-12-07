@@ -37,7 +37,7 @@
             android:id="@+id/loadQRHeader"
             android:layout_width="340dp"
             android:layout_height="24dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="75dp"
             android:text="@string/loadedQR"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -54,6 +54,25 @@
             android:text="@string/viewDocument"
             android:textColor="@drawable/rounded_text_color"
             app:layout_constraintTop_toBottomOf="@+id/documentSVG"
-            android:layout_marginTop="45dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="25dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+            android:text="@string/confirmLettersButton"
+            android:layout_width="180dp"
+            android:layout_height="35dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@drawable/rounded_text_color"
+            android:id="@+id/continueToClass"
+            app:layout_constraintTop_toBottomOf="@+id/redoDocumentUpload"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="35dp"/>
+    <Button
+            android:text="@string/redoButton"
+            android:layout_width="180dp"
+            android:layout_height="35dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@drawable/rounded_text_color"
+            android:id="@+id/redoDocumentUpload" android:layout_marginTop="35dp"
+            app:layout_constraintTop_toBottomOf="@+id/viewDocumentButton" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
