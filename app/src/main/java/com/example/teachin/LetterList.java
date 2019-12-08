@@ -1,5 +1,6 @@
 package com.example.teachin;
 
+import android.content.Intent;
 import android.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -56,7 +57,8 @@ public class LetterList extends AppCompatActivity {
         @Override
         public void onItemClick(int position) {
             if(position == 0){
-
+                Intent intent = new Intent(LetterList.this, LetterView.class);
+                startActivity(intent);
             };
         }
     });
