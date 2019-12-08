@@ -9,6 +9,7 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_ripple"
             android:padding="16dp">
         <ImageView
                 android:layout_width="60dp"
