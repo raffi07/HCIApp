@@ -14,6 +14,10 @@
     <string name="listFirstEntryCount">3 of 4 read | 1 of 4 sent</string>
     <string name="listSecondEntry">Parents Talk</string>
     <string name="listSecondEntryCount">2 of 6 returned | 3 of 6 read | 1 of 6 sent</string>
+    <string name="listThirdEntry">HCI Presentation</string>
+    <string name="listThirdEntryCount">0 of 6 returned | 0 of 6 read | 6 of 6 sent</string>
+    <string name="listThirdEntryUpdated">HCI Presentation</string>
+    <string name="listThirdEntryCountUpdated">1 of 6 returned | 1 of 6 read | 6 of 6 sent</string>
 
     <string name="title_activity_load_screen">LoadScreen</string>
     <string name="title_activity_class_screen">ClassScreen</string>
