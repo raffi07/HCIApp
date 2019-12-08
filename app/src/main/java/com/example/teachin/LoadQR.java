@@ -46,7 +46,7 @@ public class LoadQR extends AppCompatActivity {
     }
 
     public void doneClickHandler(View view){
-        Intent intent = new Intent(this, LetterList.class);
+        Intent intent = new Intent(this, CreateNewLetter.class);
         startActivity(intent);
     }
 }

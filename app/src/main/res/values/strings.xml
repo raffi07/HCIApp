@@ -16,7 +16,6 @@
     <string name="listSecondEntryCount">2 of 6 sent back | 3 of 6 read | 1 of 6 sent</string>
     <string name="listThirdEntry">HCI Presentation</string>
     <string name="listThirdEntryCount">0 of 6 sent back | 0 of 6 read | 6 of 6 sent</string>
-    <string name="listThirdEntryUpdated">HCI Presentation</string>
     <string name="listThirdEntryCountUpdated">1 of 6 returned | 1 of 6 read | 6 of 6 sent</string>
     <string name="firstEntrySent">1 of 4</string>
     <string name="firstEntryRead">3 of 4</string>
@@ -24,6 +23,16 @@
     <string name="secondEntryRead">3 of 6</string>
     <string name="secondEntryReturned">2 of 6</string>
     <string name="secondEntryCompleted">0 of 6</string>
+    <string name="entryHint">Letter title</string>
+
+    <string name="child1">Anna</string>
+    <string name="child2">Bob</string>
+    <string name="child3">Catherina</string>
+    <string name="child4">David</string>
+    <string name="child5">Evelyn</string>
+    <string name="child6">Fred</string>
+
+    <string name="sendToAllText">Send To All</string>
 
     <string name="sent">SENT</string>
     <string name="read">READ</string>
