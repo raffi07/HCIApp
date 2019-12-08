@@ -28,6 +28,7 @@ public class FragmentOverviewNew extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fab;
     private Button sortReadButton;
+    private Button sentButton;
     private Button clearButton;
     final Handler handler = new Handler();
 
@@ -42,7 +43,7 @@ public class FragmentOverviewNew extends Fragment {
         createItemList();
         buildRecyclerView(v);
 
-        fab = (FloatingActionButton) v.findViewById(R.id.qrScan_floating_button);
+        fab = (FloatingActionButton) v.findViewById(R.id.qrScan_floating_button_new);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,8 +51,9 @@ public class FragmentOverviewNew extends Fragment {
                 startActivity(intent);
             }
         });
-        sortReadButton = (Button) v.findViewById(R.id.readButtonResponse);
+        sortReadButton = (Button) v.findViewById(R.id.readButtonResponseNew);
         clearButton= v.findViewById(R.id.clearButton);
+        sentButton = v.findViewById(R.id.sentButtonResponseNew);
         sortReadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +66,15 @@ public class FragmentOverviewNew extends Fragment {
                 clearFilter();
             }
         });
-
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String oneOfSix = "1 of 6";
+                sortReadButton.setText(oneOfSix);
+                String fiveOfSix = "5 of 6";
+                sentButton.setText(fiveOfSix);
+            }
+        }, 30000);
         return v;
     }
 

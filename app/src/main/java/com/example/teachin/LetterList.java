@@ -1,6 +1,7 @@
 package com.example.teachin;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ public class LetterList extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    final Handler handler = new Handler();
 
     private FloatingActionButton fab;
 
@@ -77,6 +79,17 @@ public class LetterList extends AppCompatActivity {
             if(position == 0){
                 Intent intent = new Intent(LetterList.this, NewLetterView.class);
                 startActivity(intent);
+                letterList.set(0, new LetterListItem(
+                        R.drawable.ic_responsedocument,
+                        getResources().getString(R.string.listThirdEntry),
+                        getResources().getString(R.string.listThirdEntryCountUpdated)));
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter.notifyDataSetChanged();
+                    }
+                }, 500);
+
             };
             if(position == 1){
                 Intent intent = new Intent(LetterList.this, InformationLetterView.class);
