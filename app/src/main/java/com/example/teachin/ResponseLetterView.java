@@ -6,7 +6,7 @@ import android.os.Bundle;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
-public class LetterView extends AppCompatActivity {
+public class ResponseLetterView extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -21,7 +21,7 @@ public class LetterView extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager_id);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(new FragmentOverview(), "Overview");
+        adapter.addFragment(new FragmentOverviewResponse(), "Overview");
         adapter.addFragment(new FragmentPhoto(), "Photo Wall");
 
         viewPager.setAdapter(adapter);

@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".LetterView">
+        <activity android:name=".InformationLetterView">
         </activity>
         <activity android:name=".LetterList">
         </activity>
@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoadQR"/>
+        <activity android:name=".ResponseLetterView"/>
     </application>
 
 </manifest>

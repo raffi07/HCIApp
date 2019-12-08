@@ -1,7 +1,6 @@
 package com.example.teachin;
 
 import android.content.Intent;
-import android.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -57,9 +56,13 @@ public class LetterList extends AppCompatActivity {
         @Override
         public void onItemClick(int position) {
             if(position == 0){
-                Intent intent = new Intent(LetterList.this, LetterView.class);
+                Intent intent = new Intent(LetterList.this, InformationLetterView.class);
                 startActivity(intent);
             };
+            if (position == 1) {
+                Intent intent = new Intent(LetterList.this, ResponseLetterView.class);
+                startActivity(intent);
+            }
         }
     });
     }

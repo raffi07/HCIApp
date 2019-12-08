@@ -16,7 +16,7 @@
     </Button>
 
     <Button
-            android:id="@+id/informationButton"
+            android:id="@+id/readButton"
             android:layout_width="150dp"
             android:layout_height="35dp"
             android:background="@drawable/completed"
@@ -45,8 +45,8 @@
             android:layout_marginTop="25dp"
             android:layout_marginStart="54dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_alignStart="@+id/informationButton"
-            android:layout_marginEnd="54dp" android:layout_alignEnd="@+id/informationButton"/>
+            android:layout_height="wrap_content" android:layout_alignStart="@+id/readButton"
+            android:layout_marginEnd="54dp" android:layout_alignEnd="@+id/readButton"/>
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/childrenList"
