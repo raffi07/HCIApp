@@ -33,8 +33,9 @@
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"
             android:clickable="true"
+            app:fabCustomSize="70dp"
+            app:maxImageSize="40dp"
             app:srcCompat="@drawable/ic_add_black_24dp"
-            android:background="@color/colorPrimary"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorAccent"
             />
 </RelativeLayout>
