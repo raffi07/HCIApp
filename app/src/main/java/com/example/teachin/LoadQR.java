@@ -40,4 +40,13 @@ public class LoadQR extends AppCompatActivity {
             }
         });
     }
+    public void redoClickHandler(View view){
+        finish();
+        startActivity(getIntent());
+    }
+
+    public void doneClickHandler(View view){
+        Intent intent = new Intent(this, LetterList.class);
+        startActivity(intent);
+    }
 }
