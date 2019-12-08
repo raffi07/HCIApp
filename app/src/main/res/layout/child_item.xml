@@ -13,8 +13,8 @@
             android:background="@drawable/custom_ripple"
             android:padding="16dp">
         <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:id="@+id/itemCard"
                 android:contentDescription="@string/ListItemDescription"/>
         <TextView
