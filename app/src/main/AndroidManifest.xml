@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".LoadQR"/>
         <activity android:name=".ResponseLetterView"/>
+        <activity android:name=".NewLetterView"/>
     </application>
 
 </manifest>

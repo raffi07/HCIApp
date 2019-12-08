@@ -32,6 +32,10 @@
     <string name="child5">Evelyn</string>
     <string name="child6">Fred</string>
 
+    <string name="noneOfSix">0 of 6</string>
+    <string name="oneOfSix">1 of 6</string>
+    <string name="allOfSix">6 of 6</string>
+
     <string name="sendToAllText">Send To All</string>
 
     <string name="sent">SENT</string>

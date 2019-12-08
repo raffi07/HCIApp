@@ -75,7 +75,7 @@ public class LetterList extends AppCompatActivity {
         @Override
         public void onItemClick(int position) {
             if(position == 0){
-                Intent intent = new Intent(LetterList.this, InformationLetterView.class);
+                Intent intent = new Intent(LetterList.this, NewLetterView.class);
                 startActivity(intent);
             };
             if(position == 1){

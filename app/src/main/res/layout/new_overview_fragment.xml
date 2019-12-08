@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <Button
+            android:id="@+id/sentButtonResponse"
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/sent"
+            android:text="@string/allOfSix"
+            android:textColor="@drawable/rounded_text_color_inverted" android:layout_alignParentStart="true">
+    </Button>
+
+    <Button
+            android:id="@+id/readButtonResponse"
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:background="@drawable/read"
+            android:text="@string/noneOfSix"
+            android:textColor="@drawable/rounded_text_color_inverted"
+            android:layout_marginTop="50dp"
+            android:layout_toEndOf="@+id/sentButtonResponse" android:layout_marginStart="19dp">
+    </Button>
+
+    <Button
+            android:id="@+id/returnButtonResponse"
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:background="@drawable/returned"
+            android:text="@string/noneOfSix"
+            android:textColor="@drawable/rounded_text_color"
+            android:layout_marginTop="50dp"
+            android:layout_toEndOf="@+id/readButtonResponse" android:layout_marginStart="19dp">
+    </Button>
+
+    <Button
+            android:id="@+id/completedButtonResponse"
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:background="@drawable/completed"
+            android:text="@string/noneOfSix"
+            android:textColor="@drawable/rounded_text_color"
+            android:layout_marginTop="50dp"
+            android:layout_toEndOf="@+id/returnButtonResponse" android:layout_marginStart="21dp">
+    </Button>
+
+    <Button
+            android:id="@+id/clearButton"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/clear"
+            android:clickable="true"
+            android:text="@string/clear"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="155dp" android:layout_alignParentEnd="true" android:layout_marginEnd="155dp"
+            android:layout_alignParentStart="true"
+            android:visibility="invisible">
+    </Button>
+
+    <TextView
+            android:id="@+id/sentDescription"
+            android:text="@string/sent"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginEnd="17dp"
+            android:layout_alignEnd="@+id/sentButtonResponse" android:layout_alignStart="@+id/sentButtonResponse"/>
+    <TextView
+        android:id="@+id/readDescription"
+        android:text="@string/read"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_alignStart="@+id/readButtonResponse"
+        android:layout_marginEnd="17dp" android:layout_alignEnd="@+id/readButtonResponse"/>
+
+    <TextView
+            android:id="@+id/returnDescription"
+            android:text="@string/returned"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/readButtonResponse" android:layout_marginStart="12dp"/>
+
+    <TextView
+            android:id="@+id/completedDescription"
+            android:text="@string/completed"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/returnButtonResponse" android:layout_marginStart="13dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/childrenList"
+            android:layout_marginTop="145dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:backgroundTint="@color/colorAccent"
+            app:fabCustomSize="70dp"
+            app:maxImageSize="50dp"
+            app:srcCompat="@drawable/ic_qr_scan"
+            android:id="@+id/qrScan_floating_button"/>
+
+</RelativeLayout>
