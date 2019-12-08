@@ -18,6 +18,13 @@
     <string name="listThirdEntryCount">0 of 6 returned | 0 of 6 read | 6 of 6 sent</string>
     <string name="listThirdEntryUpdated">HCI Presentation</string>
     <string name="listThirdEntryCountUpdated">1 of 6 returned | 1 of 6 read | 6 of 6 sent</string>
+    <string name="firstEntrySent">1 of 4</string>
+    <string name="firstEntryRead">3 of 4</string>
+
+    <string name="sent">SENT</string>
+    <string name="read">READ</string>
+    <string name="returned">SENT BACK</string>
+    <string name="completed">COMPLETED</string>
 
     <string name="title_activity_load_screen">LoadScreen</string>
     <string name="title_activity_class_screen">ClassScreen</string>
