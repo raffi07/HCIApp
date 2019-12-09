@@ -27,7 +27,7 @@ public class FragmentOverviewNew extends Fragment {
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fab;
-    private Button sortReadButton;
+    private Button completedButton;
     private Button sentButton;
     private Button clearButton;
     final Handler handler = new Handler();
@@ -51,10 +51,10 @@ public class FragmentOverviewNew extends Fragment {
                 startActivity(intent);
             }
         });
-        sortReadButton = (Button) v.findViewById(R.id.readButtonResponseNew);
+        completedButton = (Button) v.findViewById(R.id.readButtonResponseNew);
         clearButton= v.findViewById(R.id.clearButton);
-        sentButton = v.findViewById(R.id.sentButtonResponseNew);
-        sortReadButton.setOnClickListener(new View.OnClickListener() {
+        sentButton = v.findViewById(R.id.completedButtonResponseNew);
+        completedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sorting();
@@ -70,9 +70,15 @@ public class FragmentOverviewNew extends Fragment {
             @Override
             public void run() {
                 String oneOfSix = "1 of 6";
-                sortReadButton.setText(oneOfSix);
+                completedButton.setText(oneOfSix);
                 String fiveOfSix = "5 of 6";
                 sentButton.setText(fiveOfSix);
+                childrenList.set(0, new LetterListItem(
+                        R.drawable.ic_completed,
+                        "Anna",
+                        "Few seconds Ago"
+                ));
+                mAdapter.notifyDataSetChanged();
             }
         }, 30000);
         return v;
@@ -83,53 +89,53 @@ public class FragmentOverviewNew extends Fragment {
         childrenList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Anna",
-                "Few seconds ago"));
+                "30 seconds ago"));
         childrenList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Bob",
-                "Few seconds ago"));
+                "30 seconds ago"));
         childrenList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Catherina",
-                "Few seconds ago"));
+                "30 seconds ago"));
         childrenList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "David",
-                "Few seconds ago"));
+                "30 seconds ago"));
         childrenList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Evelyn",
-                "Few seconds ago"));
+                "30 seconds ago"));
         childrenList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Fred",
-                "Few seconds ago"));
+                "30 seconds ago"));
 
         this.savedList= new ArrayList<>();
         savedList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Anna",
-                "Few seconds ago"));
+                "Few minutes ago"));
         savedList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Bob",
-                "Few seconds ago"));
+                "Few minutes ago"));
         savedList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Catherina",
-                "Few seconds ago"));
+                "Few minutes ago"));
         savedList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "David",
-                "Few seconds ago"));
+                "Few minutes ago"));
         savedList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Evelyn",
-                "Few seconds ago"));
+                "Few minutes ago"));
         savedList.add(new LetterListItem(
                 R.drawable.ic_sent,
                 "Fred",
-                "Few seconds ago"));
+                "Few minutes ago"));
     }
 
     public void buildRecyclerView(View v){
