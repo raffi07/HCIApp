@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ParentIn</string>
+    <string name="logo_description">App Logo</string>
+    <string name="informationButton">New Information letter</string>
+    <string name="responseButton">New Response letter</string>
+    <string name="alreadyCreatedButton">Created letters</string>
+    <string name="pickQR">Take a photo to upload it</string>
+    <string name="loadedQR">The photo has been successfully taken</string>
+    <string name="loadDocument">Camera</string>
+    <string name="viewDocument">View Photo</string>
+    <string name="confirmLettersButton">Done</string>
+    <string name="redoButton">Redo</string>
+    <string name="listFirstEntry">Class Travel</string>
+    <string name="listFirstEntryCount">Completed</string>
+    <string name="listSecondEntry">Parents Talk</string>
+    <string name="listSecondEntryCount">Upload Pending</string>
+    <string name="listThirdEntry">HCI Presentation</string>
+    <string name="listThirdEntryCount">Open</string>
+    <string name="listThirdEntryCountUpdated">Completed</string>
+    <string name="firstEntrySent">1 of 4</string>
+    <string name="firstEntryRead">3 of 4</string>
+    <string name="secondEntrySent">1 of 6</string>
+    <string name="secondEntryRead">3 of 6</string>
+    <string name="secondEntryReturned">2 of 6</string>
+    <string name="secondEntryCompleted">0 of 6</string>
+    <string name="entryHint">Letter title</string>
+
+    <string name="child1">Anna</string>
+    <string name="child2">Bob</string>
+    <string name="child3">Catherina</string>
+    <string name="child4">David</string>
+    <string name="child5">Evelyn</string>
+    <string name="child6">Fred</string>
+
+    <string name="noneOfSix">0 of 6</string>
+    <string name="oneOfSix">1 of 6</string>
+    <string name="allOfSix">6 of 6</string>
+
+    <string name="sendToAllText">Send To All</string>
+
+    <string name="sent">OPEN</string>
+    <string name="read">READ</string>
+    <string name="returned">UPLOAD PENDING</string>
+    <string name="completed">COMPLETED</string>
+    <string name="clear">Clear Filter</string>
+
+    <string name="title_activity_load_screen">LoadScreen</string>
+    <string name="title_activity_class_screen">ClassScreen</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="ListItemDescription">ListItem</string>
+</resources>
