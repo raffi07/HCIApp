@@ -7,6 +7,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 public class LoadPhoto extends AppCompatActivity {
     private Button chooseLetterButton;
@@ -44,6 +45,16 @@ public class LoadPhoto extends AppCompatActivity {
     }
 
     public void doneClickHandler(View view){
-        finish();
+        View parentLayout = findViewById(android.R.id.content);
+        final Snackbar snackbar =  Snackbar.make(parentLayout, "Upload successful", Snackbar.LENGTH_LONG);
+        snackbar.setAction("CLOSE", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                snackbar.dismiss();
+                finish();
+            }
+        });
+        snackbar.setActionTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        snackbar.show();
     }
 }

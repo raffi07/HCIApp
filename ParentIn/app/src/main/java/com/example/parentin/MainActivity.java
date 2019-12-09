@@ -4,6 +4,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import static com.example.parentin.App.CHANNEL_1_ID;
 import android.os.Handler;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.snackbar.Snackbar;
 
 
 import java.util.ArrayList;
@@ -85,13 +87,12 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             mAdapter.notifyDataSetChanged();
                             String open = "0 of 3";
-                            Button openButton = (Button) findViewById(R.id.sentButtonResponseNew);
+                            Button openButton = findViewById(R.id.sentButtonResponseNew);
                             openButton.setText(open);
                             String completed = "2 of 3";
-                            Button completedButton = (Button) findViewById(R.id.completedButtonResponseNew);
-                            completedButton.setText(open);
-                        }
-                    }, 500);
+                            Button completedButton = findViewById(R.id.completedButtonResponseNew);
+                            completedButton.setText(completed);
+                        }}, 1000);
 
                 };
                 if(position == 1){

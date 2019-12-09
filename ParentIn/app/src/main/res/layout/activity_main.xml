@@ -45,7 +45,7 @@
             android:layout_width="75dp"
             android:layout_height="35dp"
             android:background="@drawable/completed"
-            android:text="0 of 3"
+            android:text="1 of 3"
             android:textColor="@drawable/rounded_text_color"
             android:layout_marginTop="100dp"
             android:layout_toEndOf="@+id/returnButtonResponseNew" android:layout_marginStart="67dp">
