@@ -36,7 +36,7 @@ public class LoadQR extends AppCompatActivity {
                     public void run() {
                         setContentView(R.layout.activity_loaded_qr);
                     }
-                }, 500);
+                }, 1000);
             }
         });
     }

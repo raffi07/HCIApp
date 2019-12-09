@@ -16,12 +16,12 @@ public class NewLetterView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_letter_view);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        viewPager = (ViewPager) findViewById(R.id.viewpager_id);
+        tabLayout = findViewById(R.id.tabLayout);
+        viewPager = findViewById(R.id.viewpager_id);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         adapter.addFragment(new FragmentOverviewNew(), "Overview");
-        adapter.addFragment(new FragmentPhoto(), "Photo Wall");
+        adapter.addFragment(new FragmentPhotoNew(), "Photo Wall");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

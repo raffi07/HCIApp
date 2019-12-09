@@ -24,28 +24,24 @@ public class MainActivity extends AppCompatActivity {
         informationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openLoadScreen("information");
+                Intent intent = new Intent(MainActivity.this, CreateNewLetter.class);
+                startActivity(intent);
             }
         });
         responseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openLoadScreen("response");
+                Intent intent = new Intent(MainActivity.this, LoadQR.class);
+                startActivity(intent);
             }
         });
         seeLettersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), LetterList.class);
+                Intent intent = new Intent(MainActivity.this, LetterList.class);
                 startActivity(intent);
             }
         });
 
-    }
-
-    private void openLoadScreen(String type){
-        Intent intent = new Intent(this, LoadQR.class);
-        intent.putExtra("letterType", type);
-        startActivity(intent);
     }
 }

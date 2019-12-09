@@ -21,7 +21,6 @@ public class FragmentOverviewNew extends Fragment {
     private View v;
 
     private ArrayList<LetterListItem> childrenList;
-    private ArrayList<LetterListItem> savedList;
 
     private RecyclerView recyclerView;
     private MyAdapter mAdapter;
@@ -29,7 +28,7 @@ public class FragmentOverviewNew extends Fragment {
     private FloatingActionButton fab;
     private Button completedButton;
     private Button sentButton;
-    private Button clearButton;
+    private Button returnedButton;
     final Handler handler = new Handler();
 
     public FragmentOverviewNew() {
@@ -43,44 +42,50 @@ public class FragmentOverviewNew extends Fragment {
         createItemList();
         buildRecyclerView(v);
 
-        fab = (FloatingActionButton) v.findViewById(R.id.qrScan_floating_button_new);
+        fab = v.findViewById(R.id.qrScan_floating_button_new);
+        completedButton = v.findViewById(R.id.completedButtonResponseNew);
+        sentButton = v.findViewById(R.id.sentButtonResponseNew);
+        returnedButton = v.findViewById(R.id.returnButtonResponseNew);
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String oneOfSix = "1 of 6";
+                returnedButton.setText(oneOfSix);
+                String fiveOfSix = "5 of 6";
+                sentButton.setText(fiveOfSix);
+                childrenList.set(0, new LetterListItem(
+                        R.drawable.ic_returned,
+                        "Anna",
+                        "A minute ago"
+                ));
+                mAdapter.notifyDataSetChanged();
+            }
+        }, 30000);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
                 startActivity(intent);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        String noneOfSix = "0 of 6";
+                        returnedButton.setText(noneOfSix);
+                        String oneOfSix = "1 of 6";
+                        completedButton.setText(oneOfSix);
+                        childrenList.set(0, new LetterListItem(
+                                R.drawable.ic_completed,
+                                "Anna",
+                                "Few seconds ago"
+                        ));
+                        mAdapter.notifyDataSetChanged();
+                    }
+                }, 1000);
             }
         });
-        completedButton = (Button) v.findViewById(R.id.readButtonResponseNew);
-        clearButton= v.findViewById(R.id.clearButton);
-        sentButton = v.findViewById(R.id.completedButtonResponseNew);
-        completedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sorting();
-            }
-        });
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clearFilter();
-            }
-        });
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                String oneOfSix = "1 of 6";
-                completedButton.setText(oneOfSix);
-                String fiveOfSix = "5 of 6";
-                sentButton.setText(fiveOfSix);
-                childrenList.set(0, new LetterListItem(
-                        R.drawable.ic_completed,
-                        "Anna",
-                        "Few seconds Ago"
-                ));
-                mAdapter.notifyDataSetChanged();
-            }
-        }, 30000);
+
         return v;
     }
 
@@ -110,60 +115,15 @@ public class FragmentOverviewNew extends Fragment {
                 R.drawable.ic_sent,
                 "Fred",
                 "30 seconds ago"));
-
-        this.savedList= new ArrayList<>();
-        savedList.add(new LetterListItem(
-                R.drawable.ic_sent,
-                "Anna",
-                "Few minutes ago"));
-        savedList.add(new LetterListItem(
-                R.drawable.ic_sent,
-                "Bob",
-                "Few minutes ago"));
-        savedList.add(new LetterListItem(
-                R.drawable.ic_sent,
-                "Catherina",
-                "Few minutes ago"));
-        savedList.add(new LetterListItem(
-                R.drawable.ic_sent,
-                "David",
-                "Few minutes ago"));
-        savedList.add(new LetterListItem(
-                R.drawable.ic_sent,
-                "Evelyn",
-                "Few minutes ago"));
-        savedList.add(new LetterListItem(
-                R.drawable.ic_sent,
-                "Fred",
-                "Few minutes ago"));
-    }
+}
 
     public void buildRecyclerView(View v){
-        recyclerView = (RecyclerView) v.findViewById(R.id.childrenList);
+        recyclerView = v.findViewById(R.id.childrenList);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         mAdapter = new MyAdapter(childrenList);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
-    }
-
-    public void sorting(){
-        childrenList.remove(0);
-        childrenList.remove(0);
-        childrenList.remove(1);
-        clearButton.setVisibility(View.VISIBLE);
-        mAdapter.notifyDataSetChanged();
-    }
-
-    public void clearFilter(){
-        childrenList.set(0, savedList.get(0));
-        childrenList.set(1, savedList.get(1));
-        childrenList.set(2, savedList.get(2));
-        childrenList.add(savedList.get(3));
-        childrenList.add(savedList.get(4));
-        childrenList.add(savedList.get(5));
-        clearButton.setVisibility(View.INVISIBLE);
-        mAdapter.notifyDataSetChanged();
     }
 }
