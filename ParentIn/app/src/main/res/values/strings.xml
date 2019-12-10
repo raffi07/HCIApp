@@ -11,12 +11,12 @@
     <string name="confirmLettersButton">Done</string>
     <string name="redoButton">Redo</string>
     <string name="listFirstEntry">Class Travel</string>
-    <string name="listFirstEntryCount">Completed</string>
+    <string name="listFirstEntryCount">2 days ago</string>
     <string name="listSecondEntry">Parents Talk</string>
-    <string name="listSecondEntryCount">Upload Pending</string>
+    <string name="listSecondEntryCount">3 days ago</string>
     <string name="listThirdEntry">HCI Presentation</string>
-    <string name="listThirdEntryCount">Open</string>
-    <string name="listThirdEntryCountUpdated">Completed</string>
+    <string name="listThirdEntryCount">Few seconds ago</string>
+    <string name="listThirdEntryCountUpdated">Few seconds ago</string>
     <string name="firstEntrySent">1 of 4</string>
     <string name="firstEntryRead">3 of 4</string>
     <string name="secondEntrySent">1 of 6</string>
@@ -40,7 +40,7 @@
 
     <string name="sent">OPEN</string>
     <string name="read">READ</string>
-    <string name="returned">UPLOAD PENDING</string>
+    <string name="returned">SIGNED</string>
     <string name="completed">COMPLETED</string>
     <string name="clear">Clear Filter</string>
 

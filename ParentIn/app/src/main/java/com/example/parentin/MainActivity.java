@@ -159,22 +159,34 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 0){
                     Intent intent = new Intent(MainActivity.this, LoadPhoto.class);
                     startActivity(intent);
-                    letterList.set(0, new CardItem(
-                            R.drawable.ic_responsedocument,
-                            R.drawable.ic_completed,
-                            getResources().getString(R.string.listThirdEntry),
-                            getResources().getString(R.string.listThirdEntryCountUpdated)));
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+                            letterList.set(0, new CardItem(
+                                    R.drawable.ic_responsedocument,
+                                    R.drawable.ic_returned,
+                                    getResources().getString(R.string.listThirdEntry),
+                                    getResources().getString(R.string.listThirdEntryCountUpdated)));
                             mAdapter.notifyDataSetChanged();
                             String open = "0 of 3";
-                            Button openButton = findViewById(R.id.sentButtonResponseNew);
-                            openButton.setText(open);
+                            receivedButton.setText(open);
+                            String signed = "2 of 2";
+                            pendingButton.setText(signed);
+                        }}, 5000);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            letterList.set(0, new CardItem(
+                                    R.drawable.ic_responsedocument,
+                                    R.drawable.ic_completed,
+                                    getResources().getString(R.string.listThirdEntry),
+                                    getResources().getString(R.string.listThirdEntryCountUpdated)));
+                            mAdapter.notifyDataSetChanged();
+                            String signed = "1 of 2";
+                            receivedButton.setText(signed);
                             String completed = "2 of 3";
-                            Button completedButton = findViewById(R.id.completedButtonResponseNew);
-                            completedButton.setText(completed);
-                        }}, 1000);
+                            pendingButton.setText(completed);
+                        }}, 60000);
 
                 };
                 if(position == 1){

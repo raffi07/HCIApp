@@ -34,7 +34,7 @@
             android:layout_width="75dp"
             android:layout_height="35dp"
             android:background="@drawable/returned"
-            android:text="1 of 3"
+            android:text="1 of 2"
             android:textColor="@drawable/rounded_text_color"
             android:layout_marginTop="100dp"
             android:layout_toEndOf="@+id/sentButtonResponseNew" android:layout_marginStart="67dp">
@@ -55,10 +55,10 @@
             android:id="@+id/clearButton"
             android:layout_width="150dp"
             android:layout_height="35dp"
-            android:background="@drawable/clear"
+            android:background="@drawable/rounded_button"
             android:clickable="true"
             android:text="@string/clear"
-            android:textColor="@android:color/white"
+            android:textColor="@drawable/rounded_text_color_inverted"
             android:layout_marginTop="145dp"
             android:layout_marginStart="130dp" android:layout_alignParentEnd="true" android:layout_marginEnd="130dp"
             android:layout_alignParentStart="true"
@@ -86,8 +86,9 @@
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/sentButtonResponseNew" android:layout_marginStart="38dp"
-            android:layout_below="@+id/toolbar"/>
+            android:layout_marginStart="9dp"
+            android:layout_below="@+id/toolbar" android:layout_alignStart="@+id/returnButtonResponseNew"
+            android:layout_marginEnd="7dp" android:layout_alignEnd="@+id/returnButtonResponseNew"/>
 
     <TextView
             android:id="@+id/completedDescription"
