@@ -27,7 +27,10 @@ public class FragmentOverviewResponse extends Fragment {
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fab;
-    private Button sortButton;
+    private Button sentButton;
+    private Button readButton;
+    private Button returnButton;
+    private Button completedButton;
     private Button clearButton;
 
     public FragmentOverviewResponse() {
@@ -49,12 +52,33 @@ public class FragmentOverviewResponse extends Fragment {
                 startActivity(intent);
             }
         });
-        sortButton = v.findViewById(R.id.returnButtonResponse);
+        sentButton = v.findViewById(R.id.sentButtonResponse);
+        readButton = v.findViewById(R.id.readButtonResponse);
+        returnButton = v.findViewById(R.id.returnButtonResponse);
+        completedButton = v.findViewById(R.id.completedButtonResponse);
         clearButton= v.findViewById(R.id.clearButton);
-        sortButton.setOnClickListener(new View.OnClickListener() {
+        sentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sorting();
+                sorting(R.drawable.ic_sent);
+            }
+        });
+        readButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sorting(R.drawable.ic_read);
+            }
+        });
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sorting(R.drawable.ic_returned);
+            }
+        });
+        completedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sorting(R.drawable.ic_completed);
             }
         });
         clearButton.setOnClickListener(new View.OnClickListener() {
@@ -131,23 +155,27 @@ public class FragmentOverviewResponse extends Fragment {
         recyclerView.setAdapter(mAdapter);
     }
 
-    public void sorting(){
+    public void sorting(int status){
         if(childrenList.size() == 6){
-            childrenList.remove(0);
-            childrenList.remove(0);
-            childrenList.remove(1);
+            ArrayList<LetterListItem> sortedArray = new ArrayList<>();
+            for(LetterListItem item : childrenList){
+                if(item.getImageResource() == status){
+                    sortedArray.add(item);
+                }
+            }
+            childrenList.clear();
+            childrenList.addAll(sortedArray);
             clearButton.setVisibility(View.VISIBLE);
             mAdapter.notifyDataSetChanged();
+        }
+        else{
+            clearFilter();
         }
     }
 
     public void clearFilter(){
-        childrenList.set(0, savedList.get(0));
-        childrenList.set(1, savedList.get(1));
-        childrenList.set(2, savedList.get(2));
-        childrenList.add(savedList.get(3));
-        childrenList.add(savedList.get(4));
-        childrenList.add(savedList.get(5));
+        childrenList.clear();
+        childrenList.addAll(savedList);
         clearButton.setVisibility(View.INVISIBLE);
         mAdapter.notifyDataSetChanged();
     }

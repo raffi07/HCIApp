@@ -21,11 +21,15 @@ public class FragmentOverview extends Fragment {
     private View v;
 
     private ArrayList<LetterListItem> childrenList;
+    private ArrayList<LetterListItem> savedList;
 
     private RecyclerView recyclerView;
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fab;
+    private Button sentButton;
+    private Button readButton;
+    private Button clearButton;
     final Handler handler = new Handler();
 
     public FragmentOverview() {
@@ -39,7 +43,32 @@ public class FragmentOverview extends Fragment {
         createItemList();
         buildRecyclerView(v);
 
-        fab = (FloatingActionButton) v.findViewById(R.id.qrScan_floating_button);
+        readButton = v.findViewById(R.id.readButton);
+        sentButton = v.findViewById(R.id.sentButton);
+        clearButton = v.findViewById(R.id.clearButtonOverview);
+        fab = v.findViewById(R.id.qrScan_floating_button);
+
+        readButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sorting(R.drawable.ic_completed);
+            }
+        });
+
+        sentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sorting(R.drawable.ic_sent);
+            }
+        });
+
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clearFilter();
+            }
+        });
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +81,7 @@ public class FragmentOverview extends Fragment {
                 update();
             }
         });
+
 
 
         return v;
@@ -75,10 +105,28 @@ public class FragmentOverview extends Fragment {
                 R.drawable.ic_completed,
                 "David",
                 "today"));
+
+        this.savedList= new ArrayList<>();
+        savedList.add(new LetterListItem(
+                R.drawable.ic_completed,
+                "Anna",
+                "yesterday"));
+        savedList.add(new LetterListItem(
+                R.drawable.ic_sent,
+                "Bob",
+                "5 days ago"));
+        savedList.add(new LetterListItem(
+                R.drawable.ic_completed,
+                "Catherina",
+                "yesterday"));
+        savedList.add(new LetterListItem(
+                R.drawable.ic_completed,
+                "David",
+                "today"));
     }
 
     public void buildRecyclerView(View v){
-        recyclerView = (RecyclerView) v.findViewById(R.id.childrenList);
+        recyclerView = v.findViewById(R.id.childrenList);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         mAdapter = new MyAdapter(childrenList);
@@ -93,12 +141,38 @@ public class FragmentOverview extends Fragment {
             public void run() {
                 mAdapter.notifyDataSetChanged();
                 String sent = "0 of 4";
-                Button sentButton = (Button) getActivity().findViewById(R.id.sentButton);
+                Button sentButton = getActivity().findViewById(R.id.sentButton);
                 sentButton.setText(sent);
-                Button readButton = (Button) getActivity().findViewById(R.id.readButton);
+                Button readButton = getActivity().findViewById(R.id.readButton);
                 String read = "4 of 4";
                 readButton.setText(read); }
         }, 1000);
 
     }
+
+    public void sorting(int status){
+        if(childrenList.size() == 4){
+            ArrayList<LetterListItem> sortedArray = new ArrayList<>();
+            for(LetterListItem item : childrenList){
+                if(item.getImageResource() == status){
+                    sortedArray.add(item);
+                }
+            }
+            childrenList.clear();
+            childrenList.addAll(sortedArray);
+            clearButton.setVisibility(View.VISIBLE);
+            mAdapter.notifyDataSetChanged();
+        }
+        else{
+            clearFilter();
+        }
+    }
+
+    public void clearFilter(){
+        childrenList.clear();
+        childrenList.addAll(savedList);
+        clearButton.setVisibility(View.INVISIBLE);
+        mAdapter.notifyDataSetChanged();
+    }
+
 }
