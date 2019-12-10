@@ -14,9 +14,7 @@ Response letters are letters that have to be returned, because the teacher needs
 
 ## Launch information
 
-This application was designed with the Android SDK *9.0 Pie API 28* in Android Studio / IntelliJ IDEA.
-
-PLEASE NOTE: ParentIn App is a subproject in the folder. It is a separate app.
+This application was designed with the Android SDK **9.0 Pie API 28** in Android Studio / IntelliJ IDEA.
 
 ## Disclaimer
 
