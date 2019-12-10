@@ -23,10 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
     private NotificationManagerCompat notificationManager;
     private ArrayList<CardItem> letterList;
+    private ArrayList<CardItem> savedList;
 
     private RecyclerView recyclerView;
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private Button receivedButton;
+    private Button pendingButton;
+    private Button completedButton;
+    private Button clearButton;
     final Handler handler = new Handler();
 
 
@@ -36,8 +41,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         notificationManager = NotificationManagerCompat.from(this);
         notificationLauncher();
+
+        receivedButton = findViewById(R.id.sentButtonResponseNew);
+        pendingButton = findViewById(R.id.returnButtonResponseNew);
+        completedButton = findViewById(R.id.completedButtonResponseNew);
+        clearButton = findViewById(R.id.clearButton);
+
+        receivedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sorting(R.drawable.ic_sent);
+            }
+        });
+
+        pendingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sorting(R.drawable.ic_returned);
+            }
+        });
+
+        completedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sorting(R.drawable.ic_completed);
+            }
+        });
+
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clearFilter();
+            }
+        });
+
         createItemList();
         buildRecyclerView();
     }
@@ -60,6 +100,48 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getString(R.string.listSecondEntry),
                 getResources().getString(R.string.listSecondEntryCount)));
 
+        this.savedList= new ArrayList<>();
+        this.savedList.add(new CardItem(
+                R.drawable.ic_responsedocument,
+                R.drawable.ic_sent,
+                getResources().getString(R.string.listThirdEntry),
+                getResources().getString(R.string.listThirdEntryCount)));
+        savedList.add(new CardItem(
+                R.drawable.ic_infodocument,
+                R.drawable.ic_completed,
+                getResources().getString(R.string.listFirstEntry),
+                getResources().getString(R.string.listFirstEntryCount)));
+        savedList.add(new CardItem(
+                R.drawable.ic_responsedocument,
+                R.drawable.ic_returned,
+                getResources().getString(R.string.listSecondEntry),
+                getResources().getString(R.string.listSecondEntryCount)));
+
+    }
+
+    public void sorting(int status){
+        if(letterList.size() == 3){
+            ArrayList<CardItem> sortedArray = new ArrayList<>();
+            for(CardItem item : letterList){
+                if(item.getBackground() == status){
+                    sortedArray.add(item);
+                }
+            }
+            letterList.clear();
+            letterList.addAll(sortedArray);
+            clearButton.setVisibility(View.VISIBLE);
+            mAdapter.notifyDataSetChanged();
+        }
+        else{
+            clearFilter();
+        }
+    }
+
+    public void clearFilter(){
+        letterList.clear();
+        letterList.addAll(savedList);
+        clearButton.setVisibility(View.INVISIBLE);
+        mAdapter.notifyDataSetChanged();
     }
 
     public void buildRecyclerView(){
