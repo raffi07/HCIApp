@@ -48,9 +48,23 @@
             android:layout_height="wrap_content" android:layout_alignStart="@+id/readButton"
             android:layout_marginEnd="54dp" android:layout_alignEnd="@+id/readButton"/>
 
+    <Button
+            android:id="@+id/clearButtonOverview"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:background="@drawable/clear"
+            android:clickable="true"
+            android:text="@string/clear"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="130dp" android:layout_alignParentEnd="true" android:layout_marginEnd="130dp"
+            android:layout_alignParentStart="true"
+            android:visibility="invisible">
+    </Button>
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/childrenList"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="145dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
