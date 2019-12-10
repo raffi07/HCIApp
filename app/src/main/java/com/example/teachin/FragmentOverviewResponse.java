@@ -27,9 +27,8 @@ public class FragmentOverviewResponse extends Fragment {
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fab;
-    private Button sortReadButton;
+    private Button sortButton;
     private Button clearButton;
-    final Handler handler = new Handler();
 
     public FragmentOverviewResponse() {
     }
@@ -42,7 +41,7 @@ public class FragmentOverviewResponse extends Fragment {
         createItemList();
         buildRecyclerView(v);
 
-        fab = (FloatingActionButton) v.findViewById(R.id.qrScan_floating_button);
+        fab = v.findViewById(R.id.qrScan_floating_button);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,9 +49,9 @@ public class FragmentOverviewResponse extends Fragment {
                 startActivity(intent);
             }
         });
-        sortReadButton = (Button) v.findViewById(R.id.readButtonResponse);
+        sortButton = v.findViewById(R.id.returnButtonResponse);
         clearButton= v.findViewById(R.id.clearButton);
-        sortReadButton.setOnClickListener(new View.OnClickListener() {
+        sortButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sorting();
@@ -123,7 +122,7 @@ public class FragmentOverviewResponse extends Fragment {
     }
 
     public void buildRecyclerView(View v){
-        recyclerView = (RecyclerView) v.findViewById(R.id.childrenList);
+        recyclerView = v.findViewById(R.id.childrenList);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         mAdapter = new MyAdapter(childrenList);
@@ -133,11 +132,13 @@ public class FragmentOverviewResponse extends Fragment {
     }
 
     public void sorting(){
-        childrenList.remove(0);
-        childrenList.remove(0);
-        childrenList.remove(1);
-        clearButton.setVisibility(View.VISIBLE);
-        mAdapter.notifyDataSetChanged();
+        if(childrenList.size() == 6){
+            childrenList.remove(0);
+            childrenList.remove(0);
+            childrenList.remove(1);
+            clearButton.setVisibility(View.VISIBLE);
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
     public void clearFilter(){
