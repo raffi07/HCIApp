@@ -52,10 +52,10 @@
             android:id="@+id/clearButton"
             android:layout_width="150dp"
             android:layout_height="35dp"
-            android:background="@drawable/clear"
+            android:background="@drawable/rounded_button"
             android:clickable="true"
             android:text="@string/clear"
-            android:textColor="@android:color/white"
+            android:textColor="@drawable/rounded_text_color"
             android:layout_marginTop="100dp"
             android:layout_marginStart="130dp" android:layout_alignParentEnd="true" android:layout_marginEnd="130dp"
             android:layout_alignParentStart="true"
@@ -121,10 +121,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:backgroundTint="@color/colorAccent"
+            android:background="@color/buttonColor"
+            android:backgroundTint="@color/buttonColor"
             app:fabCustomSize="70dp"
             app:maxImageSize="50dp"
             app:srcCompat="@drawable/ic_qr_scan"
+            app:borderWidth="0dp"
             android:id="@+id/qrScan_floating_button"/>
 
 </RelativeLayout>

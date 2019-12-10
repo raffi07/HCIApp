@@ -36,6 +36,7 @@
             app:fabCustomSize="70dp"
             app:maxImageSize="40dp"
             app:srcCompat="@drawable/ic_add_black_24dp"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/buttonColor"
+            app:borderWidth="0dp"
             />
 </RelativeLayout>
