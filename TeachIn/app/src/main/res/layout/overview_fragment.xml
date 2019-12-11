@@ -68,19 +68,4 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:backgroundTint="@color/buttonColor"
-            app:fabCustomSize="70dp"
-            app:maxImageSize="50dp"
-            app:srcCompat="@drawable/ic_qr_scan"
-            app:borderWidth="0dp"
-            android:id="@+id/qrScan_floating_button"/>
-
 </RelativeLayout>
