@@ -26,7 +26,6 @@ public class FragmentOverview extends Fragment {
     private RecyclerView recyclerView;
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private FloatingActionButton fab;
     private Button sentButton;
     private Button readButton;
     private Button clearButton;
@@ -46,7 +45,6 @@ public class FragmentOverview extends Fragment {
         readButton = v.findViewById(R.id.readButton);
         sentButton = v.findViewById(R.id.sentButton);
         clearButton = v.findViewById(R.id.clearButtonOverview);
-        fab = v.findViewById(R.id.qrScan_floating_button);
 
         readButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,21 +66,6 @@ public class FragmentOverview extends Fragment {
                 clearFilter();
             }
         });
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
-                startActivity(intent);
-                childrenList.set(1,new LetterListItem(
-                        R.drawable.ic_completed,
-                        "Bob",
-                        "few seconds ago"));
-                update();
-            }
-        });
-
-
 
         return v;
     }

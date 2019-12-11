@@ -34,7 +34,7 @@ public class LetterList extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LetterList.this, CreateNewLetter.class);
+                Intent intent = new Intent(LetterList.this, MainActivity.class);
                 startActivity(intent);
             }
         });

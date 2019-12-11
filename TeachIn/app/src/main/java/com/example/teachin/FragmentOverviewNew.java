@@ -52,6 +52,8 @@ public class FragmentOverviewNew extends Fragment {
         returnedButton = v.findViewById(R.id.returnButtonResponseNew);
         clearButton = v.findViewById(R.id.clearButtonNew);
 
+        fab.hide();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -65,6 +67,7 @@ public class FragmentOverviewNew extends Fragment {
                         "A minute ago"
                 ));
                 mAdapter.notifyDataSetChanged();
+                fab.show();
             }
         }, 30000);
 
